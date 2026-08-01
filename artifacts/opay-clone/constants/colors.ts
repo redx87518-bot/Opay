@@ -1,59 +1,84 @@
 /**
- * Semantic design tokens for the mobile app.
- *
- * These tokens mirror the naming conventions used in web artifacts (index.css)
- * so that multi-artifact projects share a cohesive visual identity.
- *
- * Replace the placeholder values below with values that match the project's
- * brand. If a sibling web artifact exists, read its index.css and convert the
- * HSL values to hex so both artifacts use the same palette.
- *
- * To add dark mode, add a `dark` key with the same token names.
- * The useColors() hook will automatically pick it up.
+ * OPay brand color system — do not hardcode hex values in components.
+ * Use useColors() hook which returns the active theme tokens.
  */
-
 const colors = {
   light: {
-    // Legacy aliases (kept for backward compatibility)
-    text: '#0a0a0a',
-    tint: '#2f95dc',
+    // Core aliases
+    text: '#1A1A1A',
+    tint: '#06C755',
 
-    // Core surfaces
-    background: '#ffffff',
-    foreground: '#0a0a0a',
+    // Surfaces
+    background: '#F5F6FA',
+    foreground: '#1A1A1A',
 
-    // Cards / elevated surfaces
-    card: '#f9f9f9',
-    cardForeground: '#0a0a0a',
+    // Cards
+    card: '#FFFFFF',
+    cardForeground: '#1A1A1A',
 
-    // Primary action color (buttons, links, active states)
-    primary: '#2f95dc',
-    primaryForeground: '#ffffff',
+    // Primary (OPay Green)
+    primary: '#06C755',
+    primaryForeground: '#FFFFFF',
 
-    // Secondary / less-emphasis interactive surfaces
-    secondary: '#f0f0f0',
-    secondaryForeground: '#1a1a1a',
+    // Secondary
+    secondary: '#E8F8EE',
+    secondaryForeground: '#1A3A2A',
 
-    // Muted / subdued elements (dividers, timestamps, placeholders)
-    muted: '#f0f0f0',
-    mutedForeground: '#737373',
+    // Muted
+    muted: '#F0F0F0',
+    mutedForeground: '#888888',
 
-    // Accent highlights (badges, selected items, focus rings)
-    accent: '#f0f0f0',
-    accentForeground: '#1a1a1a',
+    // Accent
+    accent: '#E8F8EE',
+    accentForeground: '#06C755',
 
-    // Destructive actions (delete, error states)
-    destructive: '#ef4444',
-    destructiveForeground: '#ffffff',
+    // Destructive
+    destructive: '#FF3B30',
+    destructiveForeground: '#FFFFFF',
 
-    // Borders and input outlines
-    border: '#e5e5e5',
-    input: '#e5e5e5',
+    // Borders
+    border: '#E8E8E8',
+    input: '#F5F5F5',
+
+    // OPay-specific tokens
+    headerGreen: '#06C755',
+    darkGreen: '#04923E',
+    darkNavy: '#1A3A2A',
+    lightGreen: '#E8F8EE',
+    warning: '#FF9500',
+    info: '#007AFF',
+    overlay: 'rgba(0,0,0,0.5)',
+    greenOverlay: 'rgba(6,199,85,0.08)',
   },
-
-  // Border radius (in px). Sync from the sibling web artifact's --radius
-  // CSS variable. This value applies to cards, buttons, inputs, and modals.
-  radius: 8,
+  dark: {
+    text: '#FFFFFF',
+    tint: '#06C755',
+    background: '#0D0D0D',
+    foreground: '#FFFFFF',
+    card: '#1C1C1E',
+    cardForeground: '#FFFFFF',
+    primary: '#06C755',
+    primaryForeground: '#FFFFFF',
+    secondary: '#1A2E21',
+    secondaryForeground: '#06C755',
+    muted: '#2C2C2E',
+    mutedForeground: '#AEAEB2',
+    accent: '#1A2E21',
+    accentForeground: '#06C755',
+    destructive: '#FF453A',
+    destructiveForeground: '#FFFFFF',
+    border: '#2C2C2E',
+    input: '#2C2C2E',
+    headerGreen: '#06C755',
+    darkGreen: '#04923E',
+    darkNavy: '#1A3A2A',
+    lightGreen: '#1A2E21',
+    warning: '#FF9F0A',
+    info: '#0A84FF',
+    overlay: 'rgba(0,0,0,0.7)',
+    greenOverlay: 'rgba(6,199,85,0.12)',
+  },
+  radius: 12,
 };
 
 export default colors;

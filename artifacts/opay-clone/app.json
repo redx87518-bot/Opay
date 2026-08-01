@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "OPay Clone",
+    "name": "OPay",
     "slug": "opay-clone",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -11,12 +11,24 @@
     "splash": {
       "image": "./assets/images/icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#06C755"
     },
     "ios": {
-      "supportsTablet": false
+      "supportsTablet": false,
+      "bundleIdentifier": "com.opay.clone",
+      "infoPlist": {
+        "NSFaceIDUsageDescription": "Use Face ID to securely log in to OPay",
+        "NSCameraUsageDescription": "Required for profile photo"
+      }
     },
-    "android": {},
+    "android": {
+      "package": "com.opay.clone",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/icon.png",
+        "backgroundColor": "#06C755"
+      },
+      "permissions": ["USE_BIOMETRIC", "USE_FINGERPRINT"]
+    },
     "web": {
       "favicon": "./assets/images/icon.png"
     },

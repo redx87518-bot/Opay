@@ -13,16 +13,29 @@ import {
 } from '@expo-google-fonts/inter';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
+import { AuthProvider } from '@/context/AuthContext';
+import { WalletProvider } from '@/context/WalletContext';
 
-// Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
 const queryClient = new QueryClient();
 
 function RootLayoutNav() {
   return (
-    <Stack screenOptions={{ headerBackTitle: 'Back' }}>
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+    <Stack screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="index" />
+      <Stack.Screen name="(auth)" />
+      <Stack.Screen name="(tabs)" />
+      <Stack.Screen name="add-money" options={{ presentation: 'modal', headerShown: false, animation: 'slide_from_bottom' }} />
+      <Stack.Screen name="send-money" options={{ presentation: 'modal', headerShown: false, animation: 'slide_from_bottom' }} />
+      <Stack.Screen name="airtime" options={{ presentation: 'modal', headerShown: false, animation: 'slide_from_bottom' }} />
+      <Stack.Screen name="data-plan" options={{ presentation: 'modal', headerShown: false, animation: 'slide_from_bottom' }} />
+      <Stack.Screen name="bills" options={{ presentation: 'modal', headerShown: false, animation: 'slide_from_bottom' }} />
+      <Stack.Screen name="transfer" options={{ presentation: 'modal', headerShown: false, animation: 'slide_from_bottom' }} />
+      <Stack.Screen name="receipt" options={{ presentation: 'modal', headerShown: false, animation: 'slide_from_bottom' }} />
+      <Stack.Screen name="settings" options={{ headerShown: false, animation: 'slide_from_right' }} />
+      <Stack.Screen name="notifications" options={{ headerShown: false, animation: 'slide_from_right' }} />
+      <Stack.Screen name="profile" options={{ headerShown: false, animation: 'slide_from_right' }} />
     </Stack>
   );
 }
@@ -47,9 +60,13 @@ export default function RootLayout() {
     <SafeAreaProvider>
       <ErrorBoundary>
         <QueryClientProvider client={queryClient}>
-          <GestureHandlerRootView>
+          <GestureHandlerRootView style={{ flex: 1 }}>
             <KeyboardProvider>
-              <RootLayoutNav />
+              <AuthProvider>
+                <WalletProvider>
+                  <RootLayoutNav />
+                </WalletProvider>
+              </AuthProvider>
             </KeyboardProvider>
           </GestureHandlerRootView>
         </QueryClientProvider>
