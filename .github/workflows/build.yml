@@ -38,17 +38,16 @@ jobs:
 
       - name: Build with Gradle (attempt ${{ matrix.attempt }})
         run: ./gradlew assembleDebug --stacktrace --no-daemon
-        continue-on-error: true
 
       - name: Verify APK exists
         run: |
           ls -la app/build/outputs/apk/debug/ || true
           ls -la app/build/outputs/apk/ || true
           find app/build -name "*.apk" -type f 2>/dev/null || true
+          test -f app/build/outputs/apk/debug/app-debug.apk || (echo "APK not found at expected path" && exit 1)
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
-        if: always()
         with:
           name: GoldPay-Debug-v${{ github.run_number }}
           path: app/build/outputs/apk/debug/app-debug.apk
