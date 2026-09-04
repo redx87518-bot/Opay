@@ -41,4 +41,22 @@ interface PaystackApi {
         @Query("bank_code") bankCode: String,
         @Header("Authorization") secretKey: String
     ): Response<PaystackResolveResponse>
+
+    @GET("bank")
+    suspend fun listBanks(
+        @Header("Authorization") secretKey: String
+    ): Response<PaystackBankListResponse>
 }
+
+data class PaystackBankListResponse(
+    val status: Boolean,
+    val message: String,
+    val data: List<PaystackBank>?
+)
+
+data class PaystackBank(
+    val id: Int,
+    val name: String,
+    val code: String,
+    val active: Boolean
+)

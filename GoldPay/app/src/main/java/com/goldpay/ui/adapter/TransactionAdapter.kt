@@ -3,13 +3,16 @@ package com.goldpay.ui.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.goldpay.R
 import com.goldpay.data.model.Transaction
+import com.goldpay.ui.fragment.ReceiptFragment
 
 class TransactionAdapter : RecyclerView.Adapter<TransactionAdapter.VH>() {
     private val items = mutableListOf<Transaction>()
+    var onReceiptClick: ((Transaction) -> Unit)? = null
 
     fun submitList(list: List<Transaction>) {
         items.clear()
@@ -32,6 +35,7 @@ class TransactionAdapter : RecyclerView.Adapter<TransactionAdapter.VH>() {
         private val tvTitle = itemView.findViewById<TextView>(R.id.tvTitle)
         private val tvSubtitle = itemView.findViewById<TextView>(R.id.tvSubtitle)
         private val tvAmount = itemView.findViewById<TextView>(R.id.tvAmount)
+        private val btnReceipt = itemView.findViewById<ImageButton>(R.id.btnReceipt)
 
         fun bind(tx: Transaction) {
             tvTitle.text = tx.description.ifBlank { tx.type.replaceFirstChar { it.uppercase() } }
@@ -43,6 +47,9 @@ class TransactionAdapter : RecyclerView.Adapter<TransactionAdapter.VH>() {
                     if (tx.type.contains("credit", true)) R.color.green_500 else R.color.red_500
                 )
             )
+            btnReceipt.setOnClickListener {
+                onReceiptClick?.invoke(tx)
+            }
         }
     }
 }

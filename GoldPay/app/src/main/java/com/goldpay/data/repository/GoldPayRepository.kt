@@ -154,7 +154,7 @@ class GoldPayRepository(
                 "sender_name" to (user.name.ifBlank { user.phone })
             )
 
-            sendTransactionSms(formattedAccount, Constants.SMS_DEBIT_ALERT_APP, smsValues)
+            sendTransactionSms(phone, Constants.SMS_DEBIT_ALERT_APP, smsValues)
 
             Result.Success(tx)
         } catch (e: Exception) {
@@ -242,6 +242,24 @@ class GoldPayRepository(
         }
     }
 
+    suspend fun getBanks(): Result<List<Bank>> = withContext(Dispatchers.IO) {
+        try {
+            val secretKey = preferences.paystackSecretKey
+            if (secretKey.isBlank()) {
+                return@withContext Result.Success(Banks.NIGERIAN_BANKS)
+            }
+            val response = paystackApi.listBanks("Bearer $secretKey")
+            if (response.isSuccessful && response.body()?.status == true) {
+                val banks = response.body()?.data?.map { Bank(it.code, it.name) } ?: Banks.NIGERIAN_BANKS
+                Result.Success(banks)
+            } else {
+                Result.Success(Banks.NIGERIAN_BANKS)
+            }
+        } catch (e: Exception) {
+            Result.Success(Banks.NIGERIAN_BANKS)
+        }
+    }
+
     suspend fun sendTransactionSms(phone: String, template: String, values: Map<String, String>): Result<Unit> = withContext(Dispatchers.IO) {
         try {
             val apiKey = preferences.termiiApiKey
@@ -253,9 +271,10 @@ class GoldPayRepository(
             values.forEach { (key, value) ->
                 message = message.replace("[${key.uppercase()}]", value)
             }
+            val formattedPhone = formatPhoneNumber(phone)
             val request = mapOf(
                 "api_key" to apiKey,
-                "phone_number" to phone,
+                "phone_number" to formattedPhone,
                 "sender_id" to senderId,
                 "message" to message,
                 "message_type" to "plain"

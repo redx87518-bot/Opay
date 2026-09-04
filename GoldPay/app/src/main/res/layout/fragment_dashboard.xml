@@ -3,40 +3,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/gray_100"
     android:padding="16dp">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="16dp"
-        app:cardBackgroundTint="@color/gold_primary"
-        android:padding="20dp">
+        app:cardCornerRadius="20dp"
+        app:cardElevation="8dp"
+        android:layout_marginBottom="20dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:background="@drawable/gradient_gold">
 
             <TextView
-                android:text="Welcome to GoldPay"
-                android:textColor="@android:color/white"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:text="Demo Account"
+                android:text="Good Morning"
                 android:textColor="@android:color/white"
                 android:textSize="14sp"
-                android:alpha="0.8"
-                android:layout_marginTop="4dp" />
+                android:alpha="0.9" />
+
+            <TextView
+                android:text="Demo User"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="2dp" />
 
             <TextView
                 android:id="@+id/tvBalance"
                 android:text="₦5,000,000.00"
                 android:textColor="@android:color/white"
-                android:textSize="28sp"
+                android:textSize="32sp"
                 android:textStyle="bold"
                 android:layout_marginTop="16dp" />
+
+            <TextView
+                android:text="Available Balance"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:alpha="0.8"
+                android:layout_marginTop="4dp" />
 
         </LinearLayout>
 
@@ -48,61 +58,80 @@
         android:columnCount="4"
         android:rowCount="2"
         android:alignmentMode="alignMargins"
-        android:paddingTop="20dp">
+        android:paddingTop="8dp">
 
         <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:layout_margin="8dp">
-            <ImageView android:src="@drawable/ic_send" android:layout_width="40dp" android:layout_height="40dp" android:tint="@color/gold_primary" />
-            <TextView android:text="Send" android:layout_marginTop="4dp" android:textSize="12sp" />
+            <com.google.android.material.card.MaterialCardView android:layout_width="56dp" android:layout_height="56dp" app:cardCornerRadius="16dp" app:cardElevation="4dp">
+                <ImageView android:src="@drawable/ic_send" android:layout_width="24dp" android:layout_height="24dp" android:layout_gravity="center" android:tint="@color/gold_primary" />
+            </com.google.android.material.card.MaterialCardView>
+            <TextView android:text="Send" android:layout_marginTop="8dp" android:textSize="12sp" android:textColor="@color/gray_700" />
         </LinearLayout>
 
         <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:layout_margin="8dp">
-            <ImageView android:src="@drawable/ic_airtime" android:layout_width="40dp" android:layout_height="40dp" android:tint="@color/gold_primary" />
-            <TextView android:text="Airtime" android:layout_marginTop="4dp" android:textSize="12sp" />
+            <com.google.android.material.card.MaterialCardView android:layout_width="56dp" android:layout_height="56dp" app:cardCornerRadius="16dp" app:cardElevation="4dp">
+                <ImageView android:src="@drawable/ic_airtime" android:layout_width="24dp" android:layout_height="24dp" android:layout_gravity="center" android:tint="@color/gold_primary" />
+            </com.google.android.material.card.MaterialCardView>
+            <TextView android:text="Airtime" android:layout_marginTop="8dp" android:textSize="12sp" android:textColor="@color/gray_700" />
         </LinearLayout>
 
         <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:layout_margin="8dp">
-            <ImageView android:src="@drawable/ic_data" android:layout_width="40dp" android:layout_height="40dp" android:tint="@color/gold_primary" />
-            <TextView android:text="Data" android:layout_marginTop="4dp" android:textSize="12sp" />
+            <com.google.android.material.card.MaterialCardView android:layout_width="56dp" android:layout_height="56dp" app:cardCornerRadius="16dp" app:cardElevation="4dp">
+                <ImageView android:src="@drawable/ic_data" android:layout_width="24dp" android:layout_height="24dp" android:layout_gravity="center" android:tint="@color/gold_primary" />
+            </com.google.android.material.card.MaterialCardView>
+            <TextView android:text="Data" android:layout_marginTop="8dp" android:textSize="12sp" android:textColor="@color/gray_700" />
         </LinearLayout>
 
         <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:layout_margin="8dp">
-            <ImageView android:src="@drawable/ic_bills" android:layout_width="40dp" android:layout_height="40dp" android:tint="@color/gold_primary" />
-            <TextView android:text="Bills" android:layout_marginTop="4dp" android:textSize="12sp" />
+            <com.google.android.material.card.MaterialCardView android:layout_width="56dp" android:layout_height="56dp" app:cardCornerRadius="16dp" app:cardElevation="4dp">
+                <ImageView android:src="@drawable/ic_bills" android:layout_width="24dp" android:layout_height="24dp" android:layout_gravity="center" android:tint="@color/gold_primary" />
+            </com.google.android.material.card.MaterialCardView>
+            <TextView android:text="Bills" android:layout_marginTop="8dp" android:textSize="12sp" android:textColor="@color/gray_700" />
         </LinearLayout>
 
         <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:layout_margin="8dp">
-            <ImageView android:src="@drawable/ic_card" android:layout_width="40dp" android:layout_height="40dp" android:tint="@color/gold_primary" />
-            <TextView android:text="Cards" android:layout_marginTop="4dp" android:textSize="12sp" />
+            <com.google.android.material.card.MaterialCardView android:layout_width="56dp" android:layout_height="56dp" app:cardCornerRadius="16dp" app:cardElevation="4dp">
+                <ImageView android:src="@drawable/ic_card" android:layout_width="24dp" android:layout_height="24dp" android:layout_gravity="center" android:tint="@color/gold_primary" />
+            </com.google.android.material.card.MaterialCardView>
+            <TextView android:text="Cards" android:layout_marginTop="8dp" android:textSize="12sp" android:textColor="@color/gray_700" />
         </LinearLayout>
 
         <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:layout_margin="8dp">
-            <ImageView android:src="@drawable/ic_history" android:layout_width="40dp" android:layout_height="40dp" android:tint="@color/gold_primary" />
-            <TextView android:text="History" android:layout_marginTop="4dp" android:textSize="12sp" />
+            <com.google.android.material.card.MaterialCardView android:layout_width="56dp" android:layout_height="56dp" app:cardCornerRadius="16dp" app:cardElevation="4dp">
+                <ImageView android:src="@drawable/ic_history" android:layout_width="24dp" android:layout_height="24dp" android:layout_gravity="center" android:tint="@color/gold_primary" />
+            </com.google.android.material.card.MaterialCardView>
+            <TextView android:text="History" android:layout_marginTop="8dp" android:textSize="12sp" android:textColor="@color/gray_700" />
         </LinearLayout>
 
         <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:layout_margin="8dp">
-            <ImageView android:src="@drawable/ic_qr" android:layout_width="40dp" android:layout_height="40dp" android:tint="@color/gold_primary" />
-            <TextView android:text="QR Pay" android:layout_marginTop="4dp" android:textSize="12sp" />
+            <com.google.android.material.card.MaterialCardView android:layout_width="56dp" android:layout_height="56dp" app:cardCornerRadius="16dp" app:cardElevation="4dp">
+                <ImageView android:src="@drawable/ic_qr" android:layout_width="24dp" android:layout_height="24dp" android:layout_gravity="center" android:tint="@color/gold_primary" />
+            </com.google.android.material.card.MaterialCardView>
+            <TextView android:text="QR Pay" android:layout_marginTop="8dp" android:textSize="12sp" android:textColor="@color/gray_700" />
         </LinearLayout>
 
         <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:layout_margin="8dp">
-            <ImageView android:src="@drawable/ic_more" android:layout_width="40dp" android:layout_height="40dp" android:tint="@color/gold_primary" />
-            <TextView android:text="More" android:layout_marginTop="4dp" android:textSize="12sp" />
+            <com.google.android.material.card.MaterialCardView android:layout_width="56dp" android:layout_height="56dp" app:cardCornerRadius="16dp" app:cardElevation="4dp">
+                <ImageView android:src="@drawable/ic_more" android:layout_width="24dp" android:layout_height="24dp" android:layout_gravity="center" android:tint="@color/gold_primary" />
+            </com.google.android.material.card.MaterialCardView>
+            <TextView android:text="More" android:layout_marginTop="8dp" android:textSize="12sp" android:textColor="@color/gray_700" />
         </LinearLayout>
 
     </GridLayout>
 
     <TextView
         android:text="Recent Transactions"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textStyle="bold"
+        android:textColor="@color/gray_700"
         android:layout_marginTop="24dp"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginBottom="12dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvTransactions"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clipToPadding="false" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="8dp" />
 
 </LinearLayout>

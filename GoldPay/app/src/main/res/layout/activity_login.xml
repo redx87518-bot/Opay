@@ -3,13 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    android:padding="32dp">
+    android:background="@color/gray_100"
+    android:padding="24dp">
 
     <ImageView
         android:src="@drawable/ic_launcher_foreground"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="48dp"
         android:tint="@color/gold_primary" />
 
     <TextView
@@ -17,41 +19,80 @@
         android:textSize="28sp"
         android:textStyle="bold"
         android:textColor="@color/gold_primary"
+        android:layout_gravity="center"
         android:layout_marginTop="16dp" />
 
     <TextView
-        android:text="Demo Fintech App"
+        android:text="Smart Banking, Golden Touch"
         android:textSize="14sp"
         android:textColor="@color/gray_700"
+        android:layout_gravity="center"
         android:layout_marginTop="4dp" />
 
-    <com.google.android.material.textfield.TextInputLayout
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:hint="Phone Number">
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        android:layout_marginTop="48dp">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etPhone"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="phone" />
+            android:orientation="vertical"
+            android:padding="24dp">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:text="Welcome Back"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/gray_700"
+                android:layout_marginBottom="16dp" />
 
-    <Button
-        android:id="@+id/btnLogin"
-        android:text="Continue"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/gold_primary" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone Number"
+                app:startIconDrawable="@drawable/ic_phone"
+                app:startIconTint="@color/gold_primary">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:maxLines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:text="Continue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="@color/gold_primary"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:padding="12dp" />
+
+            <TextView
+                android:text="Demo PIN: 1234"
+                android:textSize="12sp"
+                android:textColor="@color/gray_700"
+                android:layout_marginTop="12dp"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
 
     <TextView
-        android:text="Demo PIN: 1234"
-        android:textSize="12sp"
+        android:text="This is a demo app for educational purposes. All balances are simulated."
+        android:textSize="11sp"
         android:textColor="@color/gray_700"
-        android:layout_marginTop="8dp"
-        android:gravity="center" />
+        android:gravity="center"
+        android:layout_marginTop="24dp"
+        android:alpha="0.7" />
 
 </LinearLayout>
