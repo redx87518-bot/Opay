@@ -27,6 +27,9 @@ jobs:
           api-level: 34
           build-tools: 34.0.0
 
+      - name: Accept Android SDK licenses
+        run: yes | sdkmanager --licenses
+
       - name: Write secrets to local.properties
         run: |
           echo "TERMII_BASE_URL=${{ secrets.TERMII_BASE_URL }}" >> local.properties
