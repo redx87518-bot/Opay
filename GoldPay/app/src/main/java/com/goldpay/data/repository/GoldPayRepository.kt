@@ -123,13 +123,16 @@ class GoldPayRepository(
                 return@withContext Result.Error(Exception("Insufficient balance"))
             }
 
+            val formattedAccount = formatPhoneNumber(phone)
+            val recipientName = resolveName(formattedAccount)
+
             val tx = Transaction(
                 id = UUID.randomUUID().toString(),
                 type = "debit",
                 amount = amount,
-                recipient = phone,
+                recipient = formattedAccount,
                 description = note.ifBlank { "Send to App" },
-                txId = "TX${System.currentTimeMillis()}"
+                txId = "TXN${System.currentTimeMillis()}"
             )
 
             database.transactionDao().insert(tx.toEntity())
@@ -137,13 +140,29 @@ class GoldPayRepository(
             val updatedUser = user.copy(balance = user.balance - amount)
             saveUser(updatedUser)
 
+            val now = java.text.SimpleDateFormat("dd-MM-yyyy HH:mm:ss", java.util.Locale.getDefault()).format(java.util.Date())
+            val datePart = now.split(" ")[0]
+            val timePart = now.split(" ")[1]
+
+            val smsValues = mapOf(
+                "amount" to String.format("%,.2f", amount),
+                "recipient_name" to recipientName,
+                "account_number" to formattedAccount,
+                "date" to datePart,
+                "time" to timePart,
+                "tx_id" to tx.txId,
+                "sender_name" to (user.name.ifBlank { user.phone })
+            )
+
+            sendTransactionSms(formattedAccount, Constants.SMS_DEBIT_ALERT_APP, smsValues)
+
             Result.Success(tx)
         } catch (e: Exception) {
             Result.Error(e)
         }
     }
 
-    suspend fun sendToBank(accountNumber: String, bankCode: String, amount: Double, recipientName: String): Result<Transaction> = withContext(Dispatchers.IO) {
+    suspend fun sendToBank(accountNumber: String, bankCode: String, amount: Double, recipientNameHint: String): Result<Transaction> = withContext(Dispatchers.IO) {
         try {
             val prefsPhone = preferences.currentUserPhone
             val user = getUser(prefsPhone).let {
@@ -154,19 +173,49 @@ class GoldPayRepository(
                 return@withContext Result.Error(Exception("Insufficient balance"))
             }
 
+            var recipientName = recipientNameHint
+            var bankName = bankCode
+
+            if (preferences.paystackSecretKey.isNotBlank()) {
+                when (val resolveResult = resolveBankAccount(accountNumber, bankCode)) {
+                    is Result.Success -> {
+                        recipientName = resolveResult.data.account_name
+                        bankName = resolveResult.data.bank_id.toString()
+                    }
+                    else -> {}
+                }
+            }
+
             val tx = Transaction(
                 id = UUID.randomUUID().toString(),
                 type = "debit",
                 amount = amount,
                 recipient = recipientName,
                 description = "Bank Transfer",
-                txId = "TX${System.currentTimeMillis()}"
+                txId = "TXN${System.currentTimeMillis()}"
             )
 
             database.transactionDao().insert(tx.toEntity())
 
             val updatedUser = user.copy(balance = user.balance - amount)
             saveUser(updatedUser)
+
+            val now = java.text.SimpleDateFormat("dd-MM-yyyy HH:mm:ss", java.util.Locale.getDefault()).format(java.util.Date())
+            val datePart = now.split(" ")[0]
+            val timePart = now.split(" ")[1]
+
+            val smsValues = mapOf(
+                "amount" to String.format("%,.2f", amount),
+                "recipient_name" to recipientName,
+                "bank_name" to bankName,
+                "account_number" to accountNumber,
+                "date" to datePart,
+                "time" to timePart,
+                "tx_id" to tx.txId,
+                "sender_name" to (user.name.ifBlank { user.phone })
+            )
+
+            sendTransactionSms(accountNumber, Constants.SMS_DEBIT_ALERT_BANK, smsValues)
 
             Result.Success(tx)
         } catch (e: Exception) {
@@ -215,6 +264,22 @@ class GoldPayRepository(
             Result.Success(Unit)
         } catch (e: Exception) {
             Result.Error(e)
+        }
+    }
+
+    private fun formatPhoneNumber(phone: String): String {
+        val cleaned = phone.replace(Regex("[^0-9]"), "")
+        return if (cleaned.startsWith("0")) cleaned else "0$cleaned"
+    }
+
+    private suspend fun resolveName(phone: String): String {
+        return try {
+            val prefsPhone = preferences.currentUserPhone
+            val user = getUser(prefsPhone)
+            if (user is Result.Success && user.data.name.isNotBlank()) user.data.name
+            else phone
+        } catch (e: Exception) {
+            phone
         }
     }
 }

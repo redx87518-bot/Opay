@@ -17,9 +17,10 @@ object Constants {
 
     const val SMS_OTP = "Your GoldPay OTP is [CODE]. It expires in 5 minutes. Do not share this with anyone."
     const val SMS_WELCOME = "Welcome to GoldPay, [NAME]! Your virtual wallet has been credited with N5,000,000. Account: [ACCOUNT]."
-    const val SMS_DEBIT_APP = "You sent N[AMOUNT] to [RECIPIENT] ([ACCOUNT]). Balance: N[BALANCE]. Txn: [TX_ID]."
-    const val SMS_DEBIT_BANK = "You sent N[AMOUNT] to [ACCOUNT_NAME] - [BANK] ([ACCOUNT_NUM]). Balance: N[BALANCE]. Txn: [TX_ID]."
-    const val SMS_CREDIT = "You received N[AMOUNT] from [SENDER] ([ACCOUNT]). Balance: N[BALANCE]. Txn: [TX_ID]."
+
+    const val SMS_CREDIT_ALERT = "Credit Alert\nAmount: N[AMOUNT]\nFrom: [SENDER_NAME]\nDate: [DATE]\nTime: [TIME]\nTransaction Type: Wallet Transfer\nTransaction ID: [TX_ID]"
+    const val SMS_DEBIT_ALERT_APP = "Debit Alert\nAmount: N[AMOUNT]\nTo: [RECIPIENT_NAME]\nDate: [DATE]\nTime: [TIME]\nTransaction Type: Wallet Transfer\nTransaction ID: [TX_ID]"
+    const val SMS_DEBIT_ALERT_BANK = "Debit Alert\nAmount: N[AMOUNT]\nTo: [RECIPIENT_NAME] - [BANK_NAME]\nAccount: [ACCOUNT_NUMBER]\nDate: [DATE]\nTime: [TIME]\nTransaction Type: Bank Transfer\nTransaction ID: [TX_ID]"
     const val SMS_AIRTIME = "Airtime of N[AMOUNT] for [NETWORK] ([PHONE]) purchased. Balance: N[BALANCE]. Txn: [TX_ID]."
     const val SMS_DATA = "Data bundle [PLAN] for [NETWORK] ([PHONE]) activated. Balance: N[BALANCE]. Txn: [TX_ID]."
     const val SMS_BILL = "[BILL_TYPE] payment of N[AMOUNT] to [PROVIDER] successful. Balance: N[BALANCE]. Txn: [TX_ID]."
