@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GoldPay</string>
+    <string name="login">Login</string>
+    <string name="verify">Verify</string>
+    <string name="continue_btn">Continue</string>
+    <string name="send_money">Send Money</string>
+    <string name="to_app">To App</string>
+    <string name="to_bank">To Bank</string>
+    <string name="settings">Settings</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="save_keys">Save Keys</string>
+    <string name="logout">Logout</string>
+    <string name="otp_hint">Enter OTP</string>
+    <string name="demo_pin">Demo PIN: 1234</string>
+</resources>

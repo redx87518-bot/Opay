@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dashboardFragment">
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.goldpay.ui.fragment.DashboardFragment"
+        android:label="Home" />
+    <fragment
+        android:id="@+id/sendMoneyFragment"
+        android:name="com.goldpay.ui.fragment.SendMoneyFragment"
+        android:label="Send" />
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.goldpay.ui.fragment.HistoryFragment"
+        android:label="History" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.goldpay.ui.fragment.SettingsFragment"
+        android:label="Settings" />
+
+</navigation>

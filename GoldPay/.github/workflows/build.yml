@@ -1,0 +1,42 @@
+name: Build GoldPay APK
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        attempt: [1, 2, 3]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Write secrets to local.properties
+        run: |
+          echo "TERMII_BASE_URL=${{ secrets.TERMII_BASE_URL }}" >> local.properties
+          echo "TERMII_API_KEY=${{ secrets.TERMII_API_KEY }}" >> local.properties
+          echo "TERMII_SENDER_ID=${{ secrets.TERMII_SENDER_ID }}" >> local.properties
+          echo "JSONBIN_MASTER_KEY=${{ secrets.JSONBIN_MASTER_KEY }}" >> local.properties
+          echo "JSONBIN_BIN_ID=${{ secrets.JSONBIN_BIN_ID }}" >> local.properties
+          echo "PAYSTACK_SECRET_KEY=${{ secrets.PAYSTACK_SECRET_KEY }}" >> local.properties
+
+      - name: Build with Gradle (attempt ${{ matrix.attempt }})
+        run: ./gradlew assembleDebug
+        continue-on-error: true
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: GoldPay-Debug-v${{ github.run_number }}
+          path: app/build/outputs/apk/debug/app-debug.apk
+          retention-days: 14

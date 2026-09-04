@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:text="Transaction"
+        android:textSize="16sp"
+        android:textColor="@color/gray_700"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/tvAmount"
+        android:text="₦0.00"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="32dp">
+
+    <ImageView
+        android:src="@drawable/ic_launcher_foreground"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:tint="@color/gold_primary" />
+
+    <TextView
+        android:text="GoldPay"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="@color/gold_primary"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:text="Demo Fintech App"
+        android:textSize="14sp"
+        android:textColor="@color/gray_700"
+        android:layout_marginTop="4dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:hint="Phone Number">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:text="Continue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/gold_primary" />
+
+    <TextView
+        android:text="Demo PIN: 1234"
+        android:textSize="12sp"
+        android:textColor="@color/gray_700"
+        android:layout_marginTop="8dp"
+        android:gravity="center" />
+
+</LinearLayout>
