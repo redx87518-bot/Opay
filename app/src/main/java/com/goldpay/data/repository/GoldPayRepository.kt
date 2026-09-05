@@ -24,41 +24,7 @@ class GoldPayRepository(
     private val preferences: PreferencesManager,
     private val database: GoldPayDatabase
 ) {
-    suspend fun sendOtp(phone: String): Result<String> = withContext(Dispatchers.IO) {
-        try {
-            val apiKey = preferences.termiiApiKey
-            if (apiKey.isBlank()) {
-                return@withContext Result.Success("DEMO_OTP_1234")
-            }
-            val request = mapOf(
-                "api_key" to apiKey,
-                "phone_number" to phone,
-                "sender_id" to preferences.termiiSenderId.ifBlank { "GoldPay" }
-            )
-            val response = termiiApi.sendSms(request)
-            if (response.isSuccessful) {
-                Result.Success("OTP_SENT")
-            } else {
-                Result.Error(Exception("Failed to send OTP"))
-            }
-        } catch (e: Exception) {
-            Result.Error(e)
-        }
-    }
-
-    suspend fun verifyOtp(phone: String, otp: String): Result<Boolean> = withContext(Dispatchers.IO) {
-        try {
-            val apiKey = preferences.termiiApiKey
-            if (apiKey.isBlank() || otp == "1234") {
-                return@withContext Result.Success(true)
-            }
-            Result.Success(otp.length == 4)
-        } catch (e: Exception) {
-            Result.Error(e)
-        }
-    }
-
-    suspend fun getUser(phone: String): Result<User> = withContext(Dispatchers.IO) {
+class GoldPayRepository(
         try {
             val binId = preferences.jsonBinBinId
             val masterKey = preferences.jsonBinMasterKey

@@ -30,7 +30,8 @@ class LoginActivity : AppCompatActivity() {
             val phone = binding.etPhone.text.toString().trim()
             if (phone.length >= 10) {
                 prefs.edit().putString(Constants.KEY_CURRENT_USER_PHONE, phone).apply()
-                startActivity(Intent(this, OtpActivity::class.java).putExtra("phone", phone))
+                startActivity(Intent(this, MainActivity::class.java))
+                finish()
             } else {
                 Toast.makeText(this, "Enter valid phone", Toast.LENGTH_SHORT).show()
             }

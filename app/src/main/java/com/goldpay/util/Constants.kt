@@ -15,7 +15,6 @@ object Constants {
 
     const val DEFAULT_TERMII_BASE_URL = "https://v4.api.termii.com/"
 
-    const val SMS_OTP = "Your GoldPay OTP is [CODE]. It expires in 5 minutes. Do not share this with anyone."
     const val SMS_WELCOME = "Welcome to GoldPay, [NAME]! Your virtual wallet has been credited with N5,000,000. Account: [ACCOUNT]."
 
     const val SMS_CREDIT_ALERT = "Credit Alert\nAmount: N[AMOUNT]\nFrom: [SENDER_NAME]\nDate: [DATE]\nTime: [TIME]\nTransaction Type: Wallet Transfer\nTransaction ID: [TX_ID]"

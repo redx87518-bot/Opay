@@ -33,6 +33,6 @@
         app:menu="@menu/bottom_nav"
         app:itemIconTint="@drawable/bottom_nav_selector"
         app:itemTextColor="@drawable/bottom_nav_selector"
-        app:backgroundTint="?attr/colorSurface" />
+        app:backgroundTint="@color/gray_100" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
