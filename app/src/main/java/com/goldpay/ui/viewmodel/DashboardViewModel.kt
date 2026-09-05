@@ -5,6 +5,7 @@ import com.goldpay.data.model.Transaction
 import com.goldpay.data.model.User
 import com.goldpay.data.repository.GoldPayRepository
 import com.goldpay.util.Constants
+import com.goldpay.util.Result
 import kotlinx.coroutines.launch
 
 class DashboardViewModel(private val repository: GoldPayRepository) : ViewModel() {

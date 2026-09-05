@@ -1,13 +1,15 @@
 package com.goldpay.ui.auth
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import android.widget.EditText
 import com.goldpay.R
 import com.goldpay.ui.MainActivity
 import com.goldpay.util.Constants
+import com.goldpay.databinding.ActivityOtpBinding
 
 class OtpActivity : AppCompatActivity() {
     private lateinit var binding: ActivityOtpBinding

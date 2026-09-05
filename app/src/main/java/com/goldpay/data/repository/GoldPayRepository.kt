@@ -8,8 +8,10 @@ import com.goldpay.data.local.GoldPayDatabase
 import com.goldpay.data.local.TransactionEntity
 import com.goldpay.data.local.toDomain
 import com.goldpay.data.local.toEntity
+import com.goldpay.data.local.PreferencesManager
+import com.goldpay.util.Bank
+import com.goldpay.util.Banks
 import com.goldpay.util.Constants
-import com.goldpay.util.PreferencesManager
 import com.goldpay.util.Result
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

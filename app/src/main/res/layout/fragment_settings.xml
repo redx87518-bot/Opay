@@ -106,6 +106,7 @@
                 </LinearLayout>
 
                 <Button
+                    android:id="@+id/btnSaveKeys"
                     android:text="Save Keys"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -117,6 +118,7 @@
         </androidx.cardview.widget.CardView>
 
         <Button
+            android:id="@+id/btnLogout"
             android:text="Logout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
