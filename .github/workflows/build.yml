@@ -22,17 +22,13 @@ jobs:
           java-version: 17
 
       - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
-        with:
-          api-level: 34
-          build-tools: 34.0.0
-          accept-android-sdk-licenses: true
-
-      - name: Install Gradle 7.5.1
         run: |
-          curl -k -fL -o /tmp/gradle-7.5.1-bin.zip https://services.gradle.org/distributions/gradle-7.5.1-bin.zip
-          unzip -q -o /tmp/gradle-7.5.1-bin.zip -d /tmp/gradle
-          echo "/tmp/gradle/gradle-7.5.1/bin" >> $GITHUB_PATH
+          sudo apt-get update -y
+          sudo apt-get install -y android-sdk-platform-tools-common
+          echo "ANDROID_HOME=/usr/local/lib/android/sdk" >> $GITHUB_ENV
+          echo "ANDROID_SDK_ROOT=/usr/local/lib/android/sdk" >> $GITHUB_ENV
+          yes | sdkmanager --licenses || true
+          sdkmanager "platform-tools" "platforms;android-33" "build-tools;33.0.2" || true
 
       - name: Write secrets to local.properties
         run: |
@@ -44,7 +40,7 @@ jobs:
           echo "PAYSTACK_SECRET_KEY=${{ secrets.PAYSTACK_SECRET_KEY }}" >> local.properties
 
       - name: Build with Gradle (attempt ${{ matrix.attempt }})
-        run: gradle assembleDebug --stacktrace --no-daemon
+        run: ./gradlew assembleDebug --stacktrace --no-daemon
 
       - name: Verify APK exists
         run: |
