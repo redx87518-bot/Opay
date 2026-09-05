@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.GoldPay" parent="Theme.AppCompat.DayNight">
+    <style name="Theme.GoldPay" parent="Theme.MaterialComponents.DayNight">
         <item name="colorPrimary">@color/gold_primary</item>
         <item name="colorPrimaryVariant">@color/gold_dark</item>
         <item name="colorOnPrimary">@android:color/white</item>
         <item name="android:statusBarColor">@color/gold_primary</item>
     </style>
 
-    <style name="Theme.GoldPay.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.GoldPay.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
 
-    <style name="Theme.GoldPay.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Theme.GoldPay.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
 </resources>
