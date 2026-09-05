@@ -6,7 +6,7 @@
     android:padding="16dp">
 
     <TextView
-        android:text="Airtime & Data"
+        android:text="Airtime &amp; Data"
         android:textSize="22sp"
         android:textStyle="bold"
         android:textColor="@color/gold_primary" />
