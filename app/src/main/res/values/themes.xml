@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.GoldPay" parent="Theme.Material3.DayNight">
+    <style name="Theme.GoldPay" parent="Theme.AppCompat.DayNight">
         <item name="colorPrimary">@color/gold_primary</item>
         <item name="colorPrimaryVariant">@color/gold_dark</item>
         <item name="colorOnPrimary">@android:color/white</item>
