@@ -264,9 +264,9 @@
             android:textColor="@android:color/white"
             android:padding="14dp"
             android:textSize="16sp"
-            app:icon="@drawable/ic_download"
-            app:iconGravity="textStart"
-            app:iconPadding="8dp" />
+            
+            
+             />
 
         <Button
             android:id="@+id/btnShareReceipt"
@@ -278,9 +278,9 @@
             android:textColor="@color/gray_700"
             android:padding="14dp"
             android:textSize="16sp"
-            app:icon="@drawable/ic_share"
-            app:iconGravity="textStart"
-            app:iconPadding="8dp" />
+            
+            
+             />
 
     </LinearLayout>
 
