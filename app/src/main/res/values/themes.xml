@@ -4,9 +4,6 @@
         <item name="colorPrimary">@color/gold_primary</item>
         <item name="colorPrimaryVariant">@color/gold_dark</item>
         <item name="colorOnPrimary">@android:color/white</item>
-        <item name="colorSecondary">@color/gold_primary</item>
-        <item name="colorSecondaryVariant">@color/gold_dark</item>
-        <item name="colorOnSecondary">@android:color/white</item>
         <item name="android:statusBarColor">@color/gold_primary</item>
     </style>
 
