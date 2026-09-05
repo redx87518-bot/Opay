@@ -30,6 +30,12 @@ jobs:
           yes | sdkmanager --licenses || true
           sdkmanager "platform-tools" "platforms;android-33" "build-tools;33.0.2" || true
 
+      - name: Install Gradle 7.5.1
+        run: |
+          curl -k -fL -o /tmp/gradle-7.5.1-bin.zip https://services.gradle.org/distributions/gradle-7.5.1-bin.zip
+          unzip -q -o /tmp/gradle-7.5.1-bin.zip -d /tmp/gradle
+          echo "/tmp/gradle/gradle-7.5.1/bin" >> $GITHUB_PATH
+
       - name: Write secrets to local.properties
         run: |
           echo "TERMII_BASE_URL=${{ secrets.TERMII_BASE_URL }}" >> local.properties
@@ -40,7 +46,7 @@ jobs:
           echo "PAYSTACK_SECRET_KEY=${{ secrets.PAYSTACK_SECRET_KEY }}" >> local.properties
 
       - name: Build with Gradle (attempt ${{ matrix.attempt }})
-        run: ./gradlew assembleDebug --stacktrace --no-daemon
+        run: gradle assembleDebug --stacktrace --no-daemon
 
       - name: Verify APK exists
         run: |
