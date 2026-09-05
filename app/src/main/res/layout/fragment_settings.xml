@@ -16,7 +16,7 @@
             android:textColor="@color/gold_primary"
             android:layout_marginBottom="16dp" />
 
-        <com.google.android.material.card.MaterialCardView
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:radius="12dp"
@@ -37,9 +37,9 @@
 
             </LinearLayout>
 
-        </com.google.android.material.card.MaterialCardView>
+        </androidx.cardview.widget.CardView>
 
-        <com.google.android.material.card.MaterialCardView
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:radius="12dp"
@@ -53,57 +53,57 @@
 
                 <TextView text="API Keys (Optional)" android:textSize="16sp" android:textStyle="bold" />
 
-                <com.google.android.material.textfield.TextInputLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Termii API Key"
                     android:layout_marginTop="8dp">
 
-                    <com.google.android.material.textfield.TextInputEditText
+                    <EditText
                         android:id="@+id/etTermiiKey"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
-                </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
 
-                <com.google.android.material.textfield.TextInputLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="JSON Bin Master Key"
                     android:layout_marginTop="8dp">
 
-                    <com.google.android.material.textfield.TextInputEditText
+                    <EditText
                         android:id="@+id/etJsonBinKey"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
-                </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
 
-                <com.google.android.material.textfield.TextInputLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="JSON Bin ID"
                     android:layout_marginTop="8dp">
 
-                    <com.google.android.material.textfield.TextInputEditText
+                    <EditText
                         android:id="@+id/etJsonBinId"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
-                </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
 
-                <com.google.android.material.textfield.TextInputLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Paystack Secret Key"
                     android:layout_marginTop="8dp">
 
-                    <com.google.android.material.textfield.TextInputEditText
+                    <EditText
                         android:id="@+id/etPaystackKey"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
-                </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
 
                 <Button
                     android:text="Save Keys"
@@ -114,7 +114,7 @@
 
             </LinearLayout>
 
-        </com.google.android.material.card.MaterialCardView>
+        </androidx.cardview.widget.CardView>
 
         <Button
             android:text="Logout"

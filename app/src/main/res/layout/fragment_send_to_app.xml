@@ -5,32 +5,32 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <com.google.android.material.textfield.TextInputLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Recipient Phone / Account">
 
-        <com.google.android.material.textfield.TextInputEditText
+        <EditText
             android:id="@+id/etRecipientPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="phone" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Amount"
         android:inputType="numberDecimal"
         android:layout_marginTop="8dp">
 
-        <com.google.android.material.textfield.TextInputEditText
+        <EditText
             android:id="@+id/etAmount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
 
     <Button
         android:id="@+id/btnSendApp"

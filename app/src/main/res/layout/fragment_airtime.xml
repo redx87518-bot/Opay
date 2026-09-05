@@ -11,33 +11,33 @@
         android:textStyle="bold"
         android:textColor="@color/gold_primary" />
 
-    <com.google.android.material.textfield.TextInputLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Phone Number"
         android:layout_marginTop="16dp">
 
-        <com.google.android.material.textfield.TextInputEditText
+        <EditText
             android:id="@+id/etPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="phone" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Amount"
         android:layout_marginTop="8dp"
         android:inputType="numberDecimal">
 
-        <com.google.android.material.textfield.TextInputEditText
+        <EditText
             android:id="@+id/etAmount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
 
     <Button
         android:text="Buy Airtime"

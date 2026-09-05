@@ -6,7 +6,7 @@
     android:background="@color/gray_100"
     android:padding="16dp">
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:radius="20dp"
@@ -50,7 +50,7 @@
 
         </LinearLayout>
 
-    </com.google.android.material.card.MaterialCardView>
+    </androidx.cardview.widget.CardView>
 
     <GridLayout
         android:layout_width="match_parent"
@@ -61,58 +61,58 @@
         android:paddingTop="8dp">
 
         <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:layout_margin="8dp">
-            <com.google.android.material.card.MaterialCardView android:layout_width="56dp" android:layout_height="56dp" android:radius="16dp" android:elevation="4dp">
+            <androidx.cardview.widget.CardView android:layout_width="56dp" android:layout_height="56dp" android:radius="16dp" android:elevation="4dp">
                 <ImageView android:src="@drawable/ic_send" android:layout_width="24dp" android:layout_height="24dp" android:layout_gravity="center" android:tint="@color/gold_primary" />
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
             <TextView android:text="Send" android:layout_marginTop="8dp" android:textSize="12sp" android:textColor="@color/gray_700" />
         </LinearLayout>
 
         <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:layout_margin="8dp">
-            <com.google.android.material.card.MaterialCardView android:layout_width="56dp" android:layout_height="56dp" android:radius="16dp" android:elevation="4dp">
+            <androidx.cardview.widget.CardView android:layout_width="56dp" android:layout_height="56dp" android:radius="16dp" android:elevation="4dp">
                 <ImageView android:src="@drawable/ic_airtime" android:layout_width="24dp" android:layout_height="24dp" android:layout_gravity="center" android:tint="@color/gold_primary" />
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
             <TextView android:text="Airtime" android:layout_marginTop="8dp" android:textSize="12sp" android:textColor="@color/gray_700" />
         </LinearLayout>
 
         <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:layout_margin="8dp">
-            <com.google.android.material.card.MaterialCardView android:layout_width="56dp" android:layout_height="56dp" android:radius="16dp" android:elevation="4dp">
+            <androidx.cardview.widget.CardView android:layout_width="56dp" android:layout_height="56dp" android:radius="16dp" android:elevation="4dp">
                 <ImageView android:src="@drawable/ic_data" android:layout_width="24dp" android:layout_height="24dp" android:layout_gravity="center" android:tint="@color/gold_primary" />
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
             <TextView android:text="Data" android:layout_marginTop="8dp" android:textSize="12sp" android:textColor="@color/gray_700" />
         </LinearLayout>
 
         <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:layout_margin="8dp">
-            <com.google.android.material.card.MaterialCardView android:layout_width="56dp" android:layout_height="56dp" android:radius="16dp" android:elevation="4dp">
+            <androidx.cardview.widget.CardView android:layout_width="56dp" android:layout_height="56dp" android:radius="16dp" android:elevation="4dp">
                 <ImageView android:src="@drawable/ic_bills" android:layout_width="24dp" android:layout_height="24dp" android:layout_gravity="center" android:tint="@color/gold_primary" />
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
             <TextView android:text="Bills" android:layout_marginTop="8dp" android:textSize="12sp" android:textColor="@color/gray_700" />
         </LinearLayout>
 
         <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:layout_margin="8dp">
-            <com.google.android.material.card.MaterialCardView android:layout_width="56dp" android:layout_height="56dp" android:radius="16dp" android:elevation="4dp">
+            <androidx.cardview.widget.CardView android:layout_width="56dp" android:layout_height="56dp" android:radius="16dp" android:elevation="4dp">
                 <ImageView android:src="@drawable/ic_card" android:layout_width="24dp" android:layout_height="24dp" android:layout_gravity="center" android:tint="@color/gold_primary" />
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
             <TextView android:text="Cards" android:layout_marginTop="8dp" android:textSize="12sp" android:textColor="@color/gray_700" />
         </LinearLayout>
 
         <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:layout_margin="8dp">
-            <com.google.android.material.card.MaterialCardView android:layout_width="56dp" android:layout_height="56dp" android:radius="16dp" android:elevation="4dp">
+            <androidx.cardview.widget.CardView android:layout_width="56dp" android:layout_height="56dp" android:radius="16dp" android:elevation="4dp">
                 <ImageView android:src="@drawable/ic_history" android:layout_width="24dp" android:layout_height="24dp" android:layout_gravity="center" android:tint="@color/gold_primary" />
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
             <TextView android:text="History" android:layout_marginTop="8dp" android:textSize="12sp" android:textColor="@color/gray_700" />
         </LinearLayout>
 
         <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:layout_margin="8dp">
-            <com.google.android.material.card.MaterialCardView android:layout_width="56dp" android:layout_height="56dp" android:radius="16dp" android:elevation="4dp">
+            <androidx.cardview.widget.CardView android:layout_width="56dp" android:layout_height="56dp" android:radius="16dp" android:elevation="4dp">
                 <ImageView android:src="@drawable/ic_qr" android:layout_width="24dp" android:layout_height="24dp" android:layout_gravity="center" android:tint="@color/gold_primary" />
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
             <TextView android:text="QR Pay" android:layout_marginTop="8dp" android:textSize="12sp" android:textColor="@color/gray_700" />
         </LinearLayout>
 
         <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:layout_margin="8dp">
-            <com.google.android.material.card.MaterialCardView android:layout_width="56dp" android:layout_height="56dp" android:radius="16dp" android:elevation="4dp">
+            <androidx.cardview.widget.CardView android:layout_width="56dp" android:layout_height="56dp" android:radius="16dp" android:elevation="4dp">
                 <ImageView android:src="@drawable/ic_more" android:layout_width="24dp" android:layout_height="24dp" android:layout_gravity="center" android:tint="@color/gold_primary" />
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
             <TextView android:text="More" android:layout_marginTop="8dp" android:textSize="12sp" android:textColor="@color/gray_700" />
         </LinearLayout>
 

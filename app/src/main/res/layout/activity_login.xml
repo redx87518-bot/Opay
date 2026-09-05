@@ -29,7 +29,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="4dp" />
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:radius="16dp"
@@ -49,21 +49,21 @@
                 android:textColor="@color/gray_700"
                 android:layout_marginBottom="16dp" />
 
-            <com.google.android.material.textfield.TextInputLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Phone Number"
-                app:startIconDrawable="@drawable/ic_phone"
-                app:startIconTint="@color/gold_primary">
+                
+                >
 
-                <com.google.android.material.textfield.TextInputEditText
+                <EditText
                     android:id="@+id/etPhone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="phone"
                     android:maxLines="1" />
 
-            </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
 
             <Button
                 android:id="@+id/btnLogin"
@@ -85,7 +85,7 @@
 
         </LinearLayout>
 
-    </com.google.android.material.card.MaterialCardView>
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:text="This is a demo app for educational purposes. All balances are simulated."
