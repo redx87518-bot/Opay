@@ -1,6 +1,7 @@
 package com.goldpay.data.local
 
 import androidx.room.*
+import com.goldpay.data.model.Transaction
 
 @Entity(tableName = "transactions")
 data class TransactionEntity(
