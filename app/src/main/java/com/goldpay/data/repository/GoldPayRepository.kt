@@ -25,6 +25,7 @@ class GoldPayRepository(
     private val database: GoldPayDatabase
 ) {
     suspend fun getUser(phone: String): Result<User> = withContext(Dispatchers.IO) {
+        try {
             val binId = preferences.jsonBinBinId
             val masterKey = preferences.jsonBinMasterKey
             if (binId.isNotBlank() && masterKey.isNotBlank()) {
