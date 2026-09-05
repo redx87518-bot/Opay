@@ -13,7 +13,7 @@ import com.goldpay.R
 import com.goldpay.databinding.FragmentSendMoneyBinding
 import com.goldpay.ui.viewmodel.GoldPayViewModelFactory
 import com.goldpay.ui.viewmodel.SendMoneyViewModel
-import com.google.android.material.tabs.TabLayoutMediator
+import androidx.viewpager2.widget.ViewPager2
 
 class SendMoneyFragment : Fragment() {
     private var _binding: FragmentSendMoneyBinding? = null

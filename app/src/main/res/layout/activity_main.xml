@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.google.android.material.appbar.AppBarLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/Theme.GoldPay.AppBarOverlay">
@@ -17,7 +17,7 @@
             app:title="GoldPay"
             app:titleTextColor="@android:color/white" />
 
-    </com.google.android.material.appbar.AppBarLayout>
+    </LinearLayout>
 
     <FrameLayout
         android:id="@+id/fragment_container"
@@ -25,7 +25,7 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
+    <LinearLayout
         android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -11,19 +11,19 @@
         android:textStyle="bold"
         android:textColor="@color/gold_primary" />
 
-    <com.google.android.material.tabs.TabLayout
+    <LinearLayout
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp">
 
-        <com.google.android.material.tabs.TabItem
+        <TextView
             android:text="To App" />
 
-        <com.google.android.material.tabs.TabItem
+        <TextView
             android:text="To Bank" />
 
-    </com.google.android.material.tabs.TabLayout>
+    </LinearLayout>
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
