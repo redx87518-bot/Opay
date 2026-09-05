@@ -1,5 +1,6 @@
 package com.goldpay.ui
 
+import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -44,10 +45,10 @@ class MainActivity : AppCompatActivity() {
     private fun updateBottomNavIcons(selected: View) {
         val gold = getColor(R.color.gold_primary)
         val gray = getColor(R.color.gray_300)
-        binding.navHome.setColorFilter(gray)
-        binding.navSend.setColorFilter(gray)
-        binding.navHistory.setColorFilter(gray)
-        binding.navSettings.setColorFilter(gray)
-        selected.setColorFilter(gold)
+        binding.navHome.imageTintList = ColorStateList.valueOf(gray)
+        binding.navSend.imageTintList = ColorStateList.valueOf(gray)
+        binding.navHistory.imageTintList = ColorStateList.valueOf(gray)
+        binding.navSettings.imageTintList = ColorStateList.valueOf(gray)
+        (selected as android.widget.ImageView).imageTintList = ColorStateList.valueOf(gold)
     }
 }
