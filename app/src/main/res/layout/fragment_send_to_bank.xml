@@ -16,7 +16,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Select Bank"
+        
         android:layout_marginBottom="8dp">
 
         <Spinner
@@ -31,7 +31,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Account Number / Phone"
+        
         android:layout_marginBottom="8dp">
 
         <EditText
@@ -64,7 +64,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Amount"
+        
         android:inputType="numberDecimal"
         android:layout_marginBottom="8dp">
 

@@ -9,7 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Recipient Phone / Account">
+        >
 
         <EditText
             android:id="@+id/etRecipientPhone"
@@ -22,7 +22,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Amount"
+        
         android:inputType="numberDecimal"
         android:layout_marginTop="8dp">
 

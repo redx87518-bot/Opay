@@ -57,7 +57,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Termii API Key"
+                    
                     android:layout_marginTop="8dp">
 
                     <EditText
@@ -70,7 +70,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="JSON Bin Master Key"
+                    
                     android:layout_marginTop="8dp">
 
                     <EditText
@@ -83,7 +83,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="JSON Bin ID"
+                    
                     android:layout_marginTop="8dp">
 
                     <EditText
@@ -96,7 +96,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Paystack Secret Key"
+                    
                     android:layout_marginTop="8dp">
 
                     <EditText

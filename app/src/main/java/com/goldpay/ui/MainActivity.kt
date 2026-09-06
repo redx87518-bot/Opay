@@ -1,6 +1,5 @@
 package com.goldpay.ui
 
-import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -8,7 +7,6 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.goldpay.R
 import com.goldpay.databinding.ActivityMainBinding
-import com.goldpay.util.ThemeHelper
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -16,12 +14,15 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        ThemeHelper.applyTheme(this)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
 
-        val navHost = supportFragmentManager.findFragmentById(R.id.fragment_container) as NavHostFragment
+        val navHost = NavHostFragment.create(R.navigation.nav_graph)
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, navHost)
+            .setPrimaryNavigationFragment(navHost)
+            .commitNow()
         navController = navHost.navController
 
         binding.navHome.setOnClickListener {
@@ -45,10 +46,10 @@ class MainActivity : AppCompatActivity() {
     private fun updateBottomNavIcons(selected: View) {
         val gold = getColor(R.color.gold_primary)
         val gray = getColor(R.color.gray_300)
-        binding.navHome.imageTintList = ColorStateList.valueOf(gray)
-        binding.navSend.imageTintList = ColorStateList.valueOf(gray)
-        binding.navHistory.imageTintList = ColorStateList.valueOf(gray)
-        binding.navSettings.imageTintList = ColorStateList.valueOf(gray)
-        (selected as android.widget.ImageView).imageTintList = ColorStateList.valueOf(gold)
+        binding.navHome.imageTintList = android.content.res.ColorStateList.valueOf(gray)
+        binding.navSend.imageTintList = android.content.res.ColorStateList.valueOf(gray)
+        binding.navHistory.imageTintList = android.content.res.ColorStateList.valueOf(gray)
+        binding.navSettings.imageTintList = android.content.res.ColorStateList.valueOf(gray)
+        (selected as android.widget.ImageView).imageTintList = android.content.res.ColorStateList.valueOf(gold)
     }
 }
